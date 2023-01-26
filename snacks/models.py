@@ -9,6 +9,10 @@ class Snack(models.Model):
     description = models.TextField(default='')
     purchaser = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
+    rating = models.IntegerField(default=0)
+    image_url = models.URLField(default='https://http.cat/404')
+    reference_url = models.URLField(default='https://http.cat/404')
+
     def __str__(self):
         return self.name
 
